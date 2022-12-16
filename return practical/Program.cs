@@ -9,11 +9,8 @@ namespace return_practical
     class Program
     {
 
-
         static void Main(string[] args)
         {
-            //var kalatburtiMatchi = new Match<FutballTeam>(); 
-
             var match212121 = new BasketballMatch(new BasketbollTeam("gundi 1"),new BasketbollTeam("maiami"));
             var playoff = new PlayOffRounds<BasketbollTeam>(match212121, new BasketballRules());
             playoff.Start();
