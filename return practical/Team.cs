@@ -29,16 +29,22 @@ namespace return_practical
         {
 
         }
-        public override void Start()
-        {
-            Start(100, 200);
-        }
-
-
         public override Match<BasketbollTeam> Reverse()
         {
             return new BasketballMatch(Away, Home);
         }
+        public override void Start()
+        {
+            Start(100, 200);
+        }
+        public Team GetWinner()
+        {
+            if (HomeScore > AwayScore) { return Home; }
+            else if (HomeScore < AwayScore) { return Away; }
+            else throw new Exception("FReaaa SHecdoma");
+        }
+
+
     }
     public class FutballTeam : Team
     {
@@ -56,7 +62,8 @@ namespace return_practical
 
         }
 
-        public override Match<FutballTeam> ReverseMatch()
+
+        public override Match<FutballTeam> Reverse()
         {
             return new FotballMatch(Away, Home);
         }

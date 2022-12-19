@@ -2,92 +2,37 @@
 using System.Collections.Generic;
 namespace Impelented_Solution
 {
-
-
-
-
-    class Cap
+    class Employee
     {
-        public string GetColor()
+        public int id { get; set; }
+        public string Name { get; set; }
+        public override string ToString()
         {
-            return color;
+            return string.Format($"id = {0}, Name = {1}", id, Name);
         }
-        private string color = "Witeli";
-    }
-    class Human
-    {
-        public void Think()
+        class EmployeeByIdComparer : IComparer<Employee>
         {
-            Brain brain = new Brain();
-            brain.Think();
-        }
-        Cap cap = new Cap();
-
-        public void InspectedCap()
-        {
-            Console.WriteLine($"Chemi Kepka aris {cap.GetColor()} feris");
-        }
-        public class Mozgi
-        {
-            public Mozgi()
+            public int Compare(Employee x, Employee y)
             {
-                Console.WriteLine("sg zma ");
+                return x.id.CompareTo(y.id);
             }
-            
         }
-
-        private class Brain
+        public static void SortList()
         {
-            public void Think()
-            {
-                Console.WriteLine("me vfiqrob chemi tvinit da");
-            }
-
+            var list = new List<Employee>();
+            list.Sort(new EmployeeByIdComparer());
+            list.Sort((x, y) => x.Name.CompareTo(y.Name));
         }
+
     }
-
-
-
-
     class Program
     {
         static void Main(string[] args)
         {
-            Human.Mozgi mozgi = new Human.Mozgi();
-
-            Human human = new Human();
-
-            human.Think();
-            human.InspectedCap();
-
-            MyStruct myStruct = new MyStruct();
-            myStruct.X = 5;
-            myStruct.Y = 1;
-            myStruct.Print();
-
-            MyClass myClass = new MyClass();
-            myClass.X = 2;
-            myClass.Y = 4;
-            myClass.Print();
-        }
-
-    }
-    class MyClass
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public void Print()
-        {
-            Console.WriteLine($"MyClass X: {X} X: {Y}");
+            Employee employee = new Employee();
+            employee.Name = "jamal";
         }
     }
-    struct MyStruct
-    {
-        public int X { get; set; }
-        public int Y { get; set; }
-        public void Print()
-        {
-            Console.WriteLine($"Stryct X: {X} X: {Y}");
-        }
-    }
+
+
 }

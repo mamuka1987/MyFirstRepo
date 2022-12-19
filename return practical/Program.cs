@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using return_practical.PlayOffs;
 
 namespace return_practical
 {
@@ -11,46 +12,45 @@ namespace return_practical
 
         static void Main(string[] args)
         {
-            var match212121 = new BasketballMatch(new BasketbollTeam("gundi 1"),new BasketbollTeam("maiami"));
-            var playoff = new PlayOffRounds<BasketbollTeam>(match212121, new BasketballRules());
-            playoff.Start();
-
+            var matchi222 = new BasketballMatch(new BasketbollTeam("Dalass"), new BasketbollTeam("Toronto"));
+            var playoff2 = new BasketballPlayoffRounds(matchi222);
+            playoff2.Start();
+            Console.ReadLine();
             return;
 
 
+            /*
+                        //MasivisMasivisMasivi();
+                        var masivi = new int[] { 1, 2, 4, 5, 6, 9 };
+                        var listi = masivi.ToList();
+                        var randomCifri = new Random().Next(0, listi.Count);
+                        listi.Add(masivi[randomCifri]);
 
-/*
-            //MasivisMasivisMasivi();
-            var masivi = new int[] { 1, 2, 4, 5, 6, 9 };
-            var listi = masivi.ToList();
-            var randomCifri = new Random().Next(0, listi.Count);
-            listi.Add(masivi[randomCifri]);
-
-            var teamNames = new string[] {"Dinamo Tbilisi","guriis Mercxali","Reingersi","Airton Sena","Juventus","Selta VIGO","Deportivo"
-            ,"Libereci","Ajax","Dinamo Drezden","Lidsi","Marselle","Chelsia","Novac Jokovich","DOrtmundi","Maverick Dallas NBA "};
-            //var teamByLinq = teamNames.Select(x => new Team(x)).ToList(); 
-
+                        var teamNames = new string[] {"Dinamo Tbilisi","guriis Mercxali","Reingersi","Airton Sena","Juventus","Selta VIGO","Deportivo"
+                        ,"Libereci","Ajax","Dinamo Drezden","Lidsi","Marselle","Chelsia","Novac Jokovich","DOrtmundi","Maverick Dallas NBA "};
+                        //var teamByLinq = teamNames.Select(x => new Team(x)).ToList(); 
 
 
 
 
-            var teams = teamNames.Select(x => new BasketbollTeam(x)).ToList();
-            var match = GenerateRandomMatch.GenerateMatch<BasketballMatch, BasketbollTeam>(teams);
+
+                        var teams = teamNames.Select(x => new BasketbollTeam(x)).ToList();
+                        var match = GenerateRandomMatch.GenerateMatch<BasketballMatch, BasketbollTeam>(teams);
 
 
-            var tournament = new Tournament("Uefa Chempions League", teams);
-            var winner = tournament.GetWinnersRecursive();
-            Console.WriteLine($" Finnal Winner Club >>> {winner.Name.ToUpper()} <<< Congrats ");
+                        var tournament = new Tournament("Uefa Chempions League", teams);
+                        var winner = tournament.GetWinnersRecursive();
+                        Console.WriteLine($" Finnal Winner Club >>> {winner.Name.ToUpper()} <<< Congrats ");
 
-            LiveStream liveStream = new LiveStream();
-            liveStream.publicLivePeople = ShowLive;
-            liveStream.Start();
-            static void ShowLive(int live)
-            {
-                Console.WriteLine($"Tamashs uyurebda SetanTaSport-ze  LIVE: {live}  Mayurebeli");
-            }
+                        LiveStream liveStream = new LiveStream();
+                        liveStream.publicLivePeople = ShowLive;
+                        liveStream.Start();
+                        static void ShowLive(int live)
+                        {
+                            Console.WriteLine($"Tamashs uyurebda SetanTaSport-ze  LIVE: {live}  Mayurebeli");
+                        }
 
-*/
+            */
 
 
             /*
